@@ -1,8 +1,17 @@
-document.addEventListener('click', toggleMenu);
+window.$ = document.querySelector.bind(document);
+window.$$ = document.querySelectorAll.bind(document);
 
 const mobileMenu = document.querySelector(".mobile-menu");
+const navLinks = document.querySelectorAll('.menu-category');
+const allItemsBlocks = document.querySelectorAll(".items");
+const laptopSvg = document.querySelector('.laptop');
+const editorSvg = document.querySelector('.editor');
+const mediaQuery = window.matchMedia("(min-width: 950px)");
 
-/* toggle mobile menu */
+document.addEventListener('click', toggleMenu);
+mediaQuery.addEventListener('change', () => changeSvgs('large'));
+
+/* toggle mobile menu by clicking on hamburger/x */
 function toggleMenu(e) {
     if (!e.target.src) {
         return;
@@ -15,47 +24,54 @@ function toggleMenu(e) {
         mobileMenu.style.transform = 'translateX(-50%)';
     }
 }
+    
+/* 
+click   -> if any blocks are showing, hide them and rotate their arrows.
+        -> if corresponding block was already showing, hide it, rotate the arrow.
+            -> if it wasn't, show it and rotate its arrow.
 
-/* each nav link */
-const navLinks = document.querySelectorAll('.menu-category');
 
-/* collection of <ul> tags (one for each nav link) */
-const allItemsBlocks = document.querySelectorAll(".items");
+*/
 
-/* add toggle display to each nav link (Product, Company, Contact) */
-navLinks.forEach((navLink, i) => {
-    let arrow = navLink.firstElementChild;
-    let selectedLink = navLink.dataset.key;
-    let correspondingBlock = document.querySelector(`.${selectedLink}-items`);
-    navLink.addEventListener('click', () => {
-       if (correspondingBlock.classList.contains('toggle-block')) {
-        arrow.classList.remove('toggle-rotate');
-            allItemsBlocks.forEach(itemsBlock => {
-                if (itemsBlock.classList.contains('toggle-block')) {
-                    itemsBlock.classList.remove('toggle-block');
-                }
-            });
-        } else if (!correspondingBlock.classList.contains('toggle-block')) {
-            arrow.classList.add('toggle-rotate');
-            allItemsBlocks.forEach(itemsBlock => {
-                if (itemsBlock.classList.contains('toggle-block')) {
-                    itemsBlock.classList.remove('toggle-block');
-                }
-            });
-            correspondingBlock.classList.add('toggle-block');
+navLinks.forEach(navLink => 
+    navLink.addEventListener('click', () => handleNavClick(navLink))
+);
+
+function handleNavClick(navLink) {
+    let clickedKey = navLink.dataset.key;
+    let clickedBlock = $(`.${clickedKey}-items`);
+    let clickedArrows = $$(`.${clickedKey}-arrow`);
+    let allBlocks = $$('.items');
+
+    if (clickedBlock.classList.contains('toggle-block')) {
+        clickedBlock.classList.remove('toggle-block');
+        console.log('removed.')
+        clickedArrows.forEach(arrow => {
+            arrow.style.transform = 'rotateZ(0deg)'
+        });
+    } else {
+        clickedBlock.classList.add('toggle-block');
+        clickedArrows.forEach(arrow => {
+            arrow.style.transform = 'rotateZ(180deg)'
+        });
+    }
+
+    allBlocks.forEach(block => {
+            if (block.classList.contains('toggle-block') && block !== clickedBlock) {
+                let key = block.dataset.key;
+                let arrows = $$(`.${key}-arrow`);
+                arrows.forEach(arrow => {
+                    arrow.style.transform = 'rotateZ(0deg)'
+                });
+                block.classList.remove('toggle-block');
             }
-    });
-});
+    })
+
+}
+       
 
 
-const editorSvg = document.querySelector('.editor');
-const laptopSvg = document.querySelector('.laptop');
 
-let  x = 0;
-const mediaQuery = window.matchMedia("(min-width: 950px)");
-mediaQuery.addEventListener('change', () => changeSvgs('large'));
-
-changeSvgs();
 
 /* change mobile svgs to desktop svgs */
 function changeSvgs() {
@@ -65,3 +81,5 @@ function changeSvgs() {
         editorSvg.src = 'images/illustration-editor-mobile.svg';
     }
 }
+
+changeSvgs();
