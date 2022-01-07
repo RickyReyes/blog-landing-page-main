@@ -24,7 +24,7 @@ button {
 
 /* start hero */
 .hero {
-  background-image: linear-gradient(135deg, #ff8f70 5%, #ff3d54 100%);
+  background-image: linear-gradient(135deg, #ff8f70 0%, #ff3d54 100%);
   width: 100%;
   color: white;
   padding: 13rem 2.6rem 10.5rem;
@@ -106,10 +106,20 @@ button {
   color: #ff525d;
 }
 
+.hero .hero-btn:first-child:hover {
+  background-color: #ff7a85;
+  color: white;
+}
+
 .hero .hero-btn:last-child {
   background-color: transparent;
   border: 1px solid white;
   color: white;
+}
+
+.hero .hero-btn:last-child:hover {
+  background-color: white;
+  color: #ff7a85;
 }
 
 /* end hero */
@@ -145,7 +155,6 @@ button {
 
 .mobile-menu .menu-category {
   font-size: 1.15rem;
-  font-weight: bold;
   color: #1f3f5b;
   padding: .875rem;
   display: -webkit-box;
@@ -157,6 +166,10 @@ button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.mobile-menu .menu-category:hover {
+  font-weight: bold;
 }
 
 .mobile-menu button {
@@ -174,6 +187,10 @@ button {
   padding: .9rem 2.75rem;
 }
 
+.mobile-menu .login:hover {
+  text-decoration: underline;
+}
+
 .mobile-menu .sign-up {
   background-image: linear-gradient(135deg, #ff8f70 5%, #ff3d54 100%);
   border-radius: 30px;
@@ -183,6 +200,12 @@ button {
   font-size: 1rem;
   font-weight: bold;
   margin-bottom: .375rem;
+}
+
+.mobile-menu .sign-up:hover {
+  background-image: none;
+  background-color: white;
+  color: #ff525d;
 }
 
 .mobile-menu .arrow {
@@ -216,13 +239,16 @@ button {
   background: #e9e9ec;
   padding: 1rem;
   color: #1f3f5b;
-  font-weight: bold;
   opacity: .7;
   border-radius: 5px;
 }
 
 .mobile-menu .items li {
   padding: .6rem;
+}
+
+.mobile-menu .items li:hover {
+  text-shadow: 1px 0px 0px #1f3f5b;
 }
 
 .mobile-menu hr {
@@ -338,6 +364,7 @@ footer {
 
 footer .footer-logo {
   padding: 5rem 0;
+  cursor: pointer;
 }
 
 footer .footer-title {
@@ -354,6 +381,11 @@ footer .footer-items li {
   padding-bottom: 0.8rem;
   color: #e9e9ec;
   opacity: .67;
+  cursor: pointer;
+}
+
+footer .footer-items li:hover {
+  text-decoration: underline;
 }
 
 footer .footer-items:last-child {
@@ -415,13 +447,26 @@ footer .footer-items:last-child {
     width: 100%;
   }
   .hero .mobile-menu .menu-category {
-    color: white;
+    color: rgba(255, 255, 255, 0.686);
+    font-weight: bold;
+    font-family: Ubuntu;
   }
   .hero .mobile-menu .arrow-light {
     display: inline;
     padding-left: .4rem;
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
+    -webkit-transition: -webkit-transform 0.2s ease-in-out;
+    transition: -webkit-transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+    opacity: .6;
+  }
+  .hero .mobile-menu .menu-category:hover {
+    color: white;
+    text-decoration: underline;
+  }
+  .hero .mobile-menu .menu-category:hover
+.arrow-light {
+    opacity: 1;
   }
   .hero .mobile-menu .arrow-dark {
     display: none;
@@ -442,6 +487,7 @@ footer .footer-items:last-child {
     background: transparent;
     color: white;
     font-size: 1.2rem;
+    font-family: Ubuntu;
     opacity: .9;
   }
   .hero .mobile-menu .sign-up {
@@ -451,6 +497,10 @@ footer .footer-items:last-child {
     white-space: nowrap;
     overflow: hidden;
   }
+  .hero .mobile-menu .sign-up:hover {
+    color: white;
+    background-color: #ff7a85;
+  }
   .hero .mobile-menu .items {
     background: white;
     opacity: 1;
@@ -458,6 +508,9 @@ footer .footer-items:last-child {
     top: 4.5rem;
     text-align: left;
     padding-right: auto;
+  }
+  .hero .mobile-menu .items > li:hover {
+    text-shadow: 1px 0px 0px #1f3f5b;
   }
   .hero .mobile-menu .items:nth-of-type(1) {
     left: 1rem;
@@ -480,6 +533,14 @@ footer .footer-items:last-child {
   .hero .hero-btns .hero-btn {
     -webkit-transform: scale(1.1);
             transform: scale(1.1);
+  }
+  .hero .hero-btns .start-for-free:hover {
+    color: white;
+    background-color: #ff7a85;
+  }
+  .hero .hero-btns .learn-more:hover {
+    color: #ff525d;
+    background-color: white;
   }
   main {
     /* start white-bkg1 */
@@ -627,11 +688,6 @@ footer .footer-items:last-child {
   footer .footer-items {
     list-style-type: none;
     padding-bottom: 2.5rem;
-  }
-  footer .footer-items li {
-    padding-bottom: 0.8rem;
-    color: #e9e9ec;
-    opacity: .67;
   }
   footer .footer-items:last-child {
     padding-bottom: 4.25rem;
