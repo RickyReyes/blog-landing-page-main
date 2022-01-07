@@ -528,14 +528,13 @@ footer .footer-items:last-child {
     text-align: left;
     justify-self: flex-end;
   }
-  main .white-bkg1-right {
+  main .editor {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
     position: absolute;
     right: -17%;
-    width: 100%;
-    min-width: 500px;
+    width: 60vw;
     max-width: 900px;
     padding-bottom: 4rem;
   }
@@ -593,9 +592,10 @@ footer .footer-items:last-child {
     margin-top: 10rem;
   }
   main .white-bkg2 .laptop {
-    width: 120%;
+    width: 100%;
     position: relative;
     right: 21%;
+    top: 5%;
     min-width: 500px;
     max-width: 900px;
   }

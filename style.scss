@@ -477,16 +477,14 @@ footer {
             text-align: left;
             justify-self: flex-end;
         }
-        // editor illustration
-        .white-bkg1-right {
+
+        .editor {
             order: 2;
             position: absolute;
             right: -17%;
-            width: 100%;
-            min-width: 500px;
+            width: 60vw;
             max-width: 900px;
             padding-bottom: 4rem;
-            // margin-bottom: 20rem;
         }
         /* end white-bkg1 */
 
@@ -533,9 +531,10 @@ footer {
             align-items: center;
             margin-top: 10rem;
             .laptop {
-                width: 120%;
+                width: 100%;
                 position: relative;
                 right: 21%;
+                top: 5%;
                 min-width: 500px;
                 max-width: 900px;
             }

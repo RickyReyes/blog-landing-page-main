@@ -25,18 +25,11 @@ function toggleMenu(e) {
     }
 }
     
-/* 
-click   -> if any blocks are showing, hide them and rotate their arrows.
-        -> if corresponding block was already showing, hide it, rotate the arrow.
-            -> if it wasn't, show it and rotate its arrow.
-
-
-*/
-
 navLinks.forEach(navLink => 
     navLink.addEventListener('click', () => handleNavClick(navLink))
 );
 
+/* toggle each nav link's options, arrow rotation */
 function handleNavClick(navLink) {
     let clickedKey = navLink.dataset.key;
     let clickedBlock = $(`.${clickedKey}-items`);
@@ -68,17 +61,17 @@ function handleNavClick(navLink) {
     })
 
 }
-       
 
-
-
-
-/* change mobile svgs to desktop svgs */
+/* change mobile svgs to desktop svgs
+(editor and laptop illustrations) */
 function changeSvgs() {
     if (mediaQuery.matches) {
         editorSvg.src = 'images/illustration-editor-desktop.svg';
+        laptopSvg.src = 'images/illustration-laptop-desktop.svg';
+        
     } else {
         editorSvg.src = 'images/illustration-editor-mobile.svg';
+        laptopSvg.src = 'images/illustration-laptop-mobile.svg';
     }
 }
 
