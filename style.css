@@ -16,6 +16,7 @@ html {
 
 body {
   font-family: Overpass, sans-serif;
+  overflow-x: hidden;
 }
 
 button {
@@ -41,6 +42,7 @@ button {
   bottom: -33rem;
   right: -42rem;
   width: 380%;
+  overflow-x: hidden;
 }
 
 .hero .logo {
