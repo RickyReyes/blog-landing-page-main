@@ -188,6 +188,7 @@ button {
         padding: .9rem 2.75rem;
         &:hover {
             text-decoration: underline;
+
         }
     }
 
@@ -453,7 +454,11 @@ footer {
                 font-size: 1.2rem;
                 font-family: Ubuntu;
                 opacity: .9;
+                &:hover {
+                    opacity: 1;
+                }
             }
+            
             .sign-up {
                 font-size: 1.15rem;
                 background: white;

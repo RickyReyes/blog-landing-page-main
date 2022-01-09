@@ -492,6 +492,9 @@ footer .footer-items:last-child {
     font-family: Ubuntu;
     opacity: .9;
   }
+  .hero .mobile-menu .login:hover {
+    opacity: 1;
+  }
   .hero .mobile-menu .sign-up {
     font-size: 1.15rem;
     background: white;
