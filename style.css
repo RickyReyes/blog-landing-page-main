@@ -513,15 +513,6 @@ footer .footer-items:last-child {
   .hero .nav-items .items > li:hover {
     text-shadow: 1px 0px 0px #1f3f5b;
   }
-  .hero .nav-items .items:nth-of-type(1) {
-    left: 1rem;
-  }
-  .hero .nav-items .items:nth-of-type(2) {
-    left: 9rem;
-  }
-  .hero .nav-items .items:nth-of-type(3) {
-    left: 16rem;
-  }
   .hero h1 {
     font-size: 4rem;
   }
@@ -542,6 +533,15 @@ footer .footer-items:last-child {
   .hero .cta-btns .learn-more:hover {
     color: #ff525d;
     background-color: white;
+  }
+  .product-items {
+    left: 1rem;
+  }
+  .company-items {
+    left: 9rem;
+  }
+  .connect-items {
+    left: 16rem;
   }
   main .white-bkg1-title {
     font-size: 3rem;

@@ -45,6 +45,8 @@ Users should be able to:
 - Mobile-first workflow
 
 ### What I learned
+- Heading levels should only increase by one
+- ul and ol elements must only directly contain li, script or template elements
 
 - Using the & selector in Sass
 - Using text-shadow to produce a "bold" effect without growing the parent container
