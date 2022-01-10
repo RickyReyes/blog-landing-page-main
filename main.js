@@ -1,7 +1,8 @@
+/* bling JS shortcuts */
 window.$ = document.querySelector.bind(document);
 window.$$ = document.querySelectorAll.bind(document);
 
-const mobileMenu = document.querySelector(".mobile-menu");
+const mobileMenu = document.querySelector(".nav-items");
 const navLinks = document.querySelectorAll('.menu-category');
 const allItemsBlocks = document.querySelectorAll(".items");
 const laptopSvg = document.querySelector('.laptop');
@@ -10,8 +11,11 @@ const mediaQuery = window.matchMedia("(min-width: 950px)");
 
 document.addEventListener('click', toggleMenu);
 mediaQuery.addEventListener('change', () => changeSvgs('large'));
+navLinks.forEach(navLink => 
+    navLink.addEventListener('click', () => handleNavClick(navLink))
+);
 
-/* toggle mobile menu by clicking on hamburger/x */
+/* toggle mobile menu by clicking on hamburger/x buttons */
 function toggleMenu(e) {
     if (!e.target.src) {
         return;
@@ -25,9 +29,6 @@ function toggleMenu(e) {
     }
 }
     
-navLinks.forEach(navLink => 
-    navLink.addEventListener('click', () => handleNavClick(navLink))
-);
 
 /* toggle each nav link's options, arrow rotation */
 function handleNavClick(navLink) {
@@ -75,4 +76,5 @@ function changeSvgs() {
     }
 }
 
+/* run changeSvgs() on page load */
 changeSvgs();
