@@ -46,21 +46,18 @@ Users should be able to:
 
 ### What I learned
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-Using the & selector in Sass
-Also, using text-shadow to produce a "bold" effect without growing the parent container
+- Using the & selector in Sass
+- Using text-shadow to produce a "bold" effect without growing the parent container
 ```css
-		li {
-			padding: 0.6rem;
-            &:hover {
-                text-shadow: 1px 0px 0px $very-dark-blue;
-            }
-		}
+li {
+	padding: 0.6rem;
+    &:hover {
+        text-shadow: 1px 0px 0px $very-dark-blue;
+    }
+}
 ```
 
-Changing an <img> tag's src attribute using a media query in JS:
+Changing an img tag's src attribute using a media query in JS:
 ```js
 const mediaQuery = window.matchMedia("(min-width: 950px)");
 function changeSvgs() {
@@ -77,7 +74,7 @@ function changeSvgs() {
 
 ### Useful resources
 
-- [Wes Bos](https://www.courses.wesbos.com) - His #JavaScript30 course  helped me learn useful vanilla JavaScript DOM manipulation.
+- [Wes Bos](https://www.courses.wesbos.com/account) - His #JavaScript30 course  helped me learn useful vanilla JavaScript DOM manipulation.
 - [Kevin Powell](https://www.youtube.com/KevinPowell) - His videos helped me get comfortable using Flexbox, CSS Grid, and Sass.
 
 ## Author
